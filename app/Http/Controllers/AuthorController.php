@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateAuthorRequest;
 use App\Http\Services\AuthorService;
-use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 
 class AuthorController extends Controller
@@ -35,17 +36,17 @@ class AuthorController extends Controller
         $author = $this->authorService->getById($id);
         return view('admin.author.edit',compact('author'));
     }
-    public function update( $id,CreateAuthorRequest $request)
+    function update(CreateAuthorRequest $request, $id)
     {
         $author = $this->authorService->getById($id);
-        $this->authorService->update($author,$request);
-        return redirect()->route('admin.author.list');
+        $this->authorService->update($author, $request);
+        return redirect()->route('author.list');
     }
     public function delete($id)
     {
         $author = $this->authorService->getById($id);
         $author->delete($author);
-        return redirect()->route('admin.author.list');
+        return redirect()->route('author.list');
 
     }
 }

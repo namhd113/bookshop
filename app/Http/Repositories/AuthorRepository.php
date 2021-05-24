@@ -18,8 +18,8 @@ class AuthorRepository
         return Author::all();
     }
 
-    public function store($customer)
+    public function store($author)
     {
-        $customer->save();
+        $author->save();
     }
 }

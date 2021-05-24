@@ -24,3 +24,11 @@ Route::prefix('authors')->group(function () {
     Route::post('/{id}/update',[\App\Http\Controllers\AuthorController::class,'update'])->name('author.update');
     Route::get('/{id}/destroy',[\App\Http\Controllers\AuthorController::class,'delete'])->name('author.destroy');
 });
+Route::prefix('category')->group(function () {
+    Route::get('/',[\App\Http\Controllers\CategoryController::class,'index'])->name('category.list');
+    Route::get('/create',[\App\Http\Controllers\CategoryController::class,'create'])->name('category.create');
+    Route::post('/create',[\App\Http\Controllers\CategoryController::class,'store'])->name('category.store');
+    Route::get('/{id}/edit',[\App\Http\Controllers\CategoryController::class,'edit'])->name('category.edit');
+    Route::post('/{id}/update',[\App\Http\Controllers\CategoryController::class,'update'])->name('category.update');
+    Route::get('/{id}/destroy',[\App\Http\Controllers\CategoryController::class,'destroy'])->name('category.destroy');
+});
