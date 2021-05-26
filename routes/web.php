@@ -32,3 +32,13 @@ Route::prefix('category')->group(function () {
     Route::post('/{id}/update',[\App\Http\Controllers\CategoryController::class,'update'])->name('category.update');
     Route::get('/{id}/destroy',[\App\Http\Controllers\CategoryController::class,'destroy'])->name('category.destroy');
 });
+
+Route::prefix('book')->group(function () {
+    Route::get('/',[\App\Http\Controllers\BookController::class,'index'])->name('book.list');
+    Route::get('/create',[\App\Http\Controllers\BookController::class,'create'])->name('book.create');
+    Route::post('/create',[\App\Http\Controllers\BookController::class,'store'])->name('book.store');
+    Route::get('/{id}/edit',[\App\Http\Controllers\BookController::class,'edit'])->name('book.edit');
+    Route::post('/{id}/update',[\App\Http\Controllers\BookController::class,'update'])->name('book.update');
+    Route::get('/{id}/destroy',[\App\Http\Controllers\BookController::class,'delete'])->name('book.destroy');
+
+});

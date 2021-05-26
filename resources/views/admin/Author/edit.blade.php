@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('/backend/select2/css/css.css')}}">
     <link rel="stylesheet" href="{{asset('/backend/select2/css/main.css')}}">
     <style>
-        .ck-content{
+        .ck-content {
             height: 200px !important;
         }
     </style>
@@ -15,75 +15,95 @@
 @section('content')
     <div class="content-wrapper" style="min-height: 1299.69px;">
         <div class="container-fluid">
-            <div class="card">
-                <div class="card-header">
-                    <h1>Thêm sách</h1>
+            <div class="row ">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Them tac gia</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form method="post" action="{{route('author.update',$author->id)}}" enctype="multipart/form-data">
+                            @csrf
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label style="width: 100px; text-align: left">Name</label>
+                                            <span class="input-icon">
+												<input type="text" id="form-field-icon-1" name="name" value="{{$author['name']}}"/>
+												<i class="ace-icon glyphicon glyphicon-user"></i>
+											</span>
+                                            <div class="space-12"></div>
+
+                                            <label style="width: 100px;text-align: left">Country</label>
+                                            <span class="input-icon">
+												<input type="text" id="form-field-icon-1" name="country" value="{{$author['country']}}"/>
+												<i class="ace-icon glyphicon glyphicon-flag"></i>
+											</span>
+                                            <div class="space-12"></div>
+
+                                            <label style="width: 100px;text-align: left">Wikipedia</label>
+                                            <span class="input-icon">
+												<input type="text" id="form-field-icon-1" name="wiki_link" value="{{$author['wiki_link']}}"/>
+												<i class="ace-icon glyphicon glyphicon-link"></i>
+											</span>
+                                            <div class="space-12"></div>
+
+                                            <label style="width: 100px;text-align: left" >Born</label>
+                                            <span class="input-icon">
+                                                        <input name="born" class="form-control date-picker"
+                                                               id="id-date-picker-1"
+                                                               type="date" data-date-format="yyyy-mm-dd"/>
+                                                <i class="ace-icon glyphicon glyphicon-heart"></i>
+                                            </span>
+                                            <div class="space-12"></div>
+
+                                            <label style="width: 100px;text-align: left">Die</label>
+                                            <span class="input-icon">
+                                                        <input name="die" class="form-control date-picker"
+                                                               id="id-date-picker-1"
+                                                               type="date" data-date-format="yyyy-mm-dd"/>
+                                                <i class="ace-icon glyphicon glyphicon-calendar"></i>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">File input</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" name="avatar" class="form-control-file">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 form-check">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+
+                            </div>
+                        </form>
+                    </div>
+
+
                 </div>
-                <div class="form-group">
-                    <form method="POST" action="{{route('author.update',$author->id)}}" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control">
-                        </div>
-                        @if($errors->has('name'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('name')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Tuổi</label>
-                            <input type="text" name="age" class="form-control" placeholder="desc">
-                        </div>
-                        @if($errors->has('age'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('age')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Trạng thái</label>
-                            <input type="text" name="status" class="form-control" placeholder="status">
-                        </div>
-                        @if($errors->has('status'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('status')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Quốc tịch</label>
-                            <input type="text" name="country" class="form-control" placeholder="status">
-                        </div>
-                        @if($errors->has('country'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('country')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Link Wiki</label>
-                            <input type="text" name="desc" class="form-control" placeholder="status">
-                        </div>
-                        @if($errors->has('desc'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('desc')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Ảnh đại diện</label>
-                            <input type="file" name="author_image" class="form-control-file">
-                        </div>
-                        @if($errors->has('author_image'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('author_image')}}
-                            </div>
-                        @endif
 
 
-
-                        <button type="submit" class="btn btn-primary">Sửa</button>
-                        <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancel</button>
-                    </form>
-                </div>
             </div>
+
         </div>
     </div>
 
@@ -92,14 +112,14 @@
     <script src="{{asset('/backend/select2/js/js.js')}}"></script>
     <script>
         $('.select2_init').select2({
-            'placeholder' : 'choose author'
+            'placeholder': 'choose author'
         })
     </script>
     <script>
-        var loadFile = function(event) {
+        var loadFile = function (event) {
             var imageOutput = document.getElementById('imageOutput');
             imageOutput.src = URL.createObjectURL(event.target.files[0]);
-            imageOutput.onload = function() {
+            imageOutput.onload = function () {
                 URL.revokeObjectURL(imageOutput.src) // free memory
             }
         };

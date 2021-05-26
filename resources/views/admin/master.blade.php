@@ -34,7 +34,9 @@
 
     {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>--}}
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
+{{--    <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>--}}
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
     @yield('scss')
 </head>
 {{--<body class="hold-transition sidebar-mini layout-fixed">--}}
@@ -60,7 +62,7 @@
     <!-- /.control-sidebar -->
     <div id="sidebar-overlay"></div></div>
 <!-- ./wrapper -->
-
+{{--<script src="//cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>--}}
 <script src="{{asset('/backend/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{asset('/backend/plugins/jquery-ui/jquery-ui.min.js')}}"></script>

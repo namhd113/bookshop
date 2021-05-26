@@ -22,4 +22,7 @@ class AuthorRepository
     {
         $author->save();
     }
+    public function delete($author){
+        $author->delete();
+    }
 }

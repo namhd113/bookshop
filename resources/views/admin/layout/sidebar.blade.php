@@ -22,36 +22,48 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Tac gia
                             <i class="right fas fa-angle-left"></i>
                         </p>
+
                     </a>
                     <ul class="nav nav-treeview">
-
+                        <li><a href="{{route('author.list')}}">Danh sách tác giả</a></li>
+                        <li><a href="{{route('author.create')}}">Thêm tác giả</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Users manager
+                            Thể loại
                             <i class="right fas fa-angle-left"></i>
                         </p>
-                    </a>
 
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li><a href="{{route('category.list')}}">Danh sách thể loại</a></li>
+                        <li><a href="{{route('category.create')}}">Thêm thể loại</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Orders manager
+                            Sach
                             <i class="right fas fa-angle-left"></i>
                         </p>
+
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li><a href="{{route('book.list')}}">Danh sách sach</a></li>
+                        <li><a href="{{route('book.create')}}">Thêm sach</a></li>
+                    </ul>
                 </li>
+
 
             </ul>
         </nav>

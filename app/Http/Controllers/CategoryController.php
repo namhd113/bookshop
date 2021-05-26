@@ -38,7 +38,7 @@ class CategoryController extends Controller
     public function edit($id){
 
         $category = $this->categoryService->getById($id);
-        return view('category.edit',compact("category"));
+        return view('admin.category.edit',compact("category"));
     }
     function update($id, Request $request)
     {

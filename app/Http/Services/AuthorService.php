@@ -15,42 +15,30 @@ class AuthorService extends BaseService
         $this->authorRepo = $authorRepo;
     }
 
-    public function getById($id)
-    {
-        return $this->authorRepo->getById($id);
-    }
-
-    public function getAll()
-    {
+    public function getAll(){
         return $this->authorRepo->getAll();
     }
-
-    function store($request)
+    public function getById($id){
+        return $this->authorRepo->getById($id);
+    }
+    public function store($request)
     {
         $author = new Author();
         $author->fill($request->all());
-        $path = $this->updateLoadFile($request, 'author_image', 'author-images');
-        $author->author_image = $path;
+        $path = $this->updateLoadFile($request, 'avatar', 'author-images');
+        $author->avatar = $path;
         $this->authorRepo->store($author);
-
     }
 
-    function update($request, $author)
+    function update($author, $request)
     {
         $author->fill($request->all());
-        $path = $this->updateLoadFile($request, 'author_image', 'author-images');
-        $author->author_image = $path;
+        $path = $this->updateLoadFile($request, 'avatar', 'author-images');
+        $author->avatar = $path;
         $this->authorRepo->store($author);
     }
-
-    public function delete($author)
-    {
+    public function delete($id){
+        $author = $this->authorRepo->getById($id);
         $this->authorRepo->delete($author);
     }
-
-//    function search($request)
-//    {
-//        $search = $request->search_author;
-//        return $this->authorRepo->search($search);
-//    }
 }

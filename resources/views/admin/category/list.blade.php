@@ -61,7 +61,7 @@
                                                         <tr>
                                                             <th scope="row">{{$key+1}}</th>
                                                             <td>{{$category->name}}</td>
-                                                            <td>{{$category->desc}}</td>
+                                                            <td>{!! $category->desc !!}</td>
 
 
                                                             <td></td>

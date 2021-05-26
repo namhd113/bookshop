@@ -70,11 +70,11 @@
       <change afterPath="$PROJECT_DIR$/../Laravel-web-login-logout-using-session/resources/views/blog.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Laravel-web-login-logout-using-session/resources/views/layouts/master.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Laravel-web-login-logout-using-session/resources/views/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Services/CategoryService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/category/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/BookReprository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/BookService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/book/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/book/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/book/list.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../authorization/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../authorization/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../authorization/.idea/php.xml" afterDir="false" />
@@ -424,13 +424,24 @@
       <change beforePath="$PROJECT_DIR$/../../.idea/html.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/html.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Repositories/AuthorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/AuthorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateAuthorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateAuthorRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/AuthorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/AuthorService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Author.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_20_083055_create_authors_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Author/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Author/add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/Author/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Author/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Author/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Author/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/content-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/content-header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -565,7 +576,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BookLaravel" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -600,8 +611,13 @@
       <workItem from="1621570436352" duration="2619000" />
       <workItem from="1621775671072" duration="1086000" />
       <workItem from="1621816221712" duration="10038000" />
-      <workItem from="1621845130932" duration="2372000" />
+      <workItem from="1621845130932" duration="4425000" />
+      <workItem from="1621864505578" duration="1992000" />
+      <workItem from="1621906402185" duration="2652000" />
+      <workItem from="1621956365161" duration="8252000" />
+      <workItem from="1621988614109" duration="2191000" />
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,26 +636,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621562415571">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621961900849">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1621562415571" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1621816301721">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1621961900849" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1621961827755">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621816301721" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1621846756992">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621961827755" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1621989757106">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1621846756992" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1621846411584">
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1621989757106" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1621988926772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1621846411584" />
-    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1621845255281">
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1621988926772" />
+    <state x="524" y="244" key="SimpleOpenTaskDialog" timestamp="1621957749516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1621845255281" />
+    <state x="524" y="244" key="SimpleOpenTaskDialog/0.0.1536.824@0.0.1536.824" timestamp="1621957749516" />
+    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1621957885232">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1621957885232" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1621957777134">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1621957777134" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -663,6 +687,11 @@
           <url>file://$PROJECT_DIR$/resources/views/admin/category/add.blade.php</url>
           <line>22</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin/category/add.blade.php</url>
+          <line>16</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

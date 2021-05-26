@@ -20,7 +20,7 @@
                     <h1>Thêm sách</h1>
                 </div>
                 <div class="form-group">
-                    <form method="POST" action="{{route('author.update',$author->id)}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('category.update',$category->id)}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Name</label>
@@ -32,54 +32,12 @@
                             </div>
                         @endif
                         <div class="form-group">
-                            <label>Tuổi</label>
-                            <input type="text" name="age" class="form-control" placeholder="desc">
+                            <label>Mô tả</label>
+                            <input type="text" name="desc" class="form-control" placeholder="price">
                         </div>
-                        @if($errors->has('age'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('age')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Trạng thái</label>
-                            <input type="text" name="status" class="form-control" placeholder="status">
-                        </div>
-                        @if($errors->has('status'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('status')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Quốc tịch</label>
-                            <input type="text" name="country" class="form-control" placeholder="status">
-                        </div>
-                        @if($errors->has('country'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('country')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Link Wiki</label>
-                            <input type="text" name="desc" class="form-control" placeholder="status">
-                        </div>
-                        @if($errors->has('desc'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('desc')}}
-                            </div>
-                        @endif
-                        <div class="form-group">
-                            <label>Ảnh đại diện</label>
-                            <input type="file" name="author_image" class="form-control-file">
-                        </div>
-                        @if($errors->has('author_image'))
-                            <div class="alert alert-danger">
-                                {{$errors->first('author_image')}}
-                            </div>
-                        @endif
 
 
-
-                        <button type="submit" class="btn btn-primary">Sửa</button>
+                        <button type="submit" class="btn btn-primary">Thêm mới</button>
                         <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Cancel</button>
                     </form>
                 </div>

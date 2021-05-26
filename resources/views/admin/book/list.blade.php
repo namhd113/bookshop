@@ -27,7 +27,7 @@
                         <!-- /.card -->
                         <div class="card">
                             <div class="card-header">
-                                <h1 class="text-primary">Danh sach tac gia</h1>
+                                <h1 class="text-primary">Danh sach sach</h1>
                             </div>
                             <div class="card-body">
                                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
@@ -62,34 +62,82 @@
                                                         </th>
                                                         <th class="center">
                                                             <i class="ace-icon fa fa-calendar bigger-110 hidden-480"></i>
-                                                            Date of Birth
+                                                            Category
                                                         </th>
                                                         <th class="center">
                                                             <i class="ace-icon fa fa-amazon bigger-110 hidden-480"></i>
-                                                            Books in store
+                                                            tac gia
                                                         </th>
                                                         <th class="center">
                                                             <i class="ace-icon fa fa-flag bigger-110 hidden-480"></i>
-                                                            Country
+                                                            Nam xuat ban
+                                                        </th>
+                                                        <th class="center">
+                                                            <i class="ace-icon fa fa-flag bigger-110 hidden-480"></i>
+                                                            Tai ban
+                                                        </th>
+                                                        <th class="center">
+                                                            <i class="ace-icon fa fa-flag bigger-110 hidden-480"></i>
+                                                            Giay phep xuat ban
                                                         </th>
 
                                                         <th></th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($author as $key=>$author)
+                                                    @foreach($books as $key=>$author)
                                                         <tr>
                                                             <td class="center">{{$key +1}}</td>
-                                                            <td class="center"><img src="{{asset('storage/'.$author->avatar)}}" height="50px" id="authorAvatar"></td>
+                                                            <td class="center"><img src="{{asset('storage/'.$author->avatar)}}" height="50px"></td>
                                                             <td class="center" style="padding-top: 20px"><a href="{{$author->wiki_link}}" id="authorName">{{$author->name}}</a></td>
                                                             <td class="center" style="padding-top: 20px">{{$author->born}}</td>
                                                             <td class="center" style="padding-top: 20px">{{$author->book_qty}}</td>
                                                             <td class="center" style="padding-top: 20px">{{$author->country}}</td>
-                                                            <td class="center" hidden id="authorId">{{$author->id}}</td>
-                                                            <td><a href="{{route('author.edit', ['id' => $author->id])}}"
-                                                                   class="btn btn-default">EDIT</a></td>
-                                                            <td><a href="{{ route('author.destroy', $author->id) }}" class="btn btn-danger"
-                                                                   onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>
+                                                            <td class="center" style="padding-top: 20px">
+                                                                <div class="hidden-sm hidden-xs btn-group">
+
+                                                                    <a class="btn btn-xs btn-info" href="{{route('books.edit',$author->id)}}"><i
+                                                                                class="ace-icon fa fa-pencil bigger-120"></i></a>
+                                                                    <a class="btn btn-xs btn-danger delete-btn" href="{{route('books.delete',$author->id)}}"><i
+                                                                                class="ace-icon fa fa-trash bigger-120"></i></a>
+
+                                                                </div>
+
+                                                                <div class="hidden-md hidden-lg">
+                                                                    <div class="inline pos-rel">
+                                                                        <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown"
+                                                                                data-position="auto">
+                                                                            <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                                                        </button>
+
+                                                                        <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                                            <li>
+                                                                                <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																			<span class="blue">
+																				<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																			</span>
+                                                                                </a>
+                                                                            </li>
+
+                                                                            <li>
+                                                                                <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																			<span class="green">
+																				<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																			</span>
+                                                                                </a>
+                                                                            </li>
+
+                                                                            <li>
+                                                                                <a href="#" class="tooltip-error"  data-rel="tooltip" title="Delete">
+																			<span class="red">
+																				<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																			</span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
                                                         </tr>
                                                     @endforeach
                                                     </tbody>

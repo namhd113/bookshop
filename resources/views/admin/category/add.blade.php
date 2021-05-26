@@ -17,13 +17,13 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h1>Thêm sách</h1>
+                    <h1>Thêm danh mục</h1>
                 </div>
                 <div class="form-group">
                     <form method="POST" action="{{route('category.store')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Tên</label>
                             <input type="text" name="name" class="form-control">
                         </div>
                         @if($errors->has('name'))
@@ -33,7 +33,8 @@
                         @endif
                         <div class="form-group">
                             <label>Mô tả</label>
-                            <input type="text" name="desc" class="form-control" placeholder="price">
+{{--                            <input type="text" name="desc" class="form-control" placeholder="price">--}}
+                            <textarea name="desc" placeholder="nhap mo ta chi tiet"></textarea>
                         </div>
 
 
@@ -43,6 +44,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 @endsection

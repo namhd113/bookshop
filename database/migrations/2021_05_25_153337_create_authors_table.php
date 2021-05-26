@@ -16,11 +16,12 @@ class CreateAuthorsTable extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('age');
-            $table->string('status');
+            $table->date('born');
+            $table->date('die')->nullable();
+            $table->integer('book_qty')->default(0);
             $table->string('country');
-            $table->string('desc');
-            $table->string('author_image')->nullable();
+            $table->string('wiki_link')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }
