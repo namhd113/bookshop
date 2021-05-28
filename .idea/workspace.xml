@@ -70,11 +70,24 @@
       <change afterPath="$PROJECT_DIR$/../Laravel-web-login-logout-using-session/resources/views/blog.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Laravel-web-login-logout-using-session/resources/views/layouts/master.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Laravel-web-login-logout-using-session/resources/views/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/BookReprository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Services/BookService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/book/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/book/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/book/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/PermissionRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/RoleRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/PermissionService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/RoleService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/UserService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/permissions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/login/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/permissions/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/permissions/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/permissions/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/update.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/list.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../authorization/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../authorization/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../authorization/.idea/php.xml" afterDir="false" />
@@ -426,22 +439,24 @@
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Repositories/AuthorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/AuthorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repositories/BookReprository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/BookReprository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repositories/CategoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateAuthorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateAuthorRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Services/AuthorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/AuthorService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Author.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_20_083055_create_authors_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Author/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Author/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Author/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Author/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/BookService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/BookService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/CategoryService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/CategoryService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Author.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/Author/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Author/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/book/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/book/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/content-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/content-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -576,19 +591,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BookLaravel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\resources\views\admin\Author" />
-      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\resources\views\admin" />
-      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\app\Http\Services" />
+      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\resources\views\admin\login" />
       <recent name="C:\xampp\htdocs\html\laravel\ShopBook\resources\views\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\config" />
+      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\resources\views\admin\Author" />
+      <recent name="C:\xampp\htdocs\html\laravel\ShopBook\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -615,7 +633,8 @@
       <workItem from="1621864505578" duration="1992000" />
       <workItem from="1621906402185" duration="2652000" />
       <workItem from="1621956365161" duration="8252000" />
-      <workItem from="1621988614109" duration="2191000" />
+      <workItem from="1621988614109" duration="7556000" />
+      <workItem from="1622166939478" duration="14665000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -636,30 +655,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621961900849">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1622177564649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1621961900849" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1621961827755">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1622177564649" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1622172382931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1621961827755" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1621989757106">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1622172382931" />
+    <state x="543" y="135" key="NewPhpClassDialog" timestamp="1622175687548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1621989757106" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1621988926772">
+    <state x="543" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1622175687548" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1622179791270">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1621988926772" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1622179791270" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1622168351598">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1622168351598" />
     <state x="524" y="244" key="SimpleOpenTaskDialog" timestamp="1621957749516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="524" y="244" key="SimpleOpenTaskDialog/0.0.1536.824@0.0.1536.824" timestamp="1621957749516" />
-    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1621957885232">
+    <state x="478" y="145" width="579" height="534" key="find.popup" timestamp="1622181693054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1621957885232" />
+    <state x="478" y="145" width="579" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1622181693054" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1621957777134">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -670,17 +693,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin/Author/list.blade.php</url>
-          <line>16</line>
+          <line>35</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin/Author/list.blade.php</url>
-          <line>19</line>
+          <line>38</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin/Author/list.blade.php</url>
-          <line>22</line>
+          <line>41</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

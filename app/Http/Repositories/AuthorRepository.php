@@ -5,6 +5,7 @@ namespace App\Http\Repositories;
 
 
 use App\Models\Author;
+use Illuminate\Support\Facades\DB;
 
 class AuthorRepository
 {
@@ -24,5 +25,8 @@ class AuthorRepository
     }
     public function delete($author){
         $author->delete();
+    }
+    public function getByName($name){
+        return DB::table('authors')->where('name','like','%'.$name.'%')->get();
     }
 }

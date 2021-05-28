@@ -13,6 +13,25 @@
     </style>
     {{--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />--}}
 @endsection
+@section('breadcrumb')
+    <div class="row">
+        <div class="col-sm-4" style="text-align: left; padding-left: 32px">
+            <a href="{{route('book.create')}}">
+                <button type="button" class="btn btn-outline-success btn-sm">Add new book</button>
+            </a>
+        </div>
+        <div class="nav-search col-sm-4" id="nav-search" style="text-align: right">
+            <form class="form-search" action="" method="post">
+                @csrf
+                <span class="input-icon">
+									<input name="search" type="text" placeholder="Search ..." class="nav-search-input"
+                                           id="nav-search-input" autocomplete="off"/>
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+            </form>
+        </div>
+    </div>
+@endsection
 
 @section('content')
     <div class="content-wrapper" style="min-height: 1299.69px;">

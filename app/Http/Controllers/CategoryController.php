@@ -51,4 +51,11 @@ class CategoryController extends Controller
         $category->delete($category);
         return redirect()->route('category.list');
     }
+    public function search(Request $request)
+    {
+        $name = $request->search;
+        $category = $this->categoryService->search($name);
+        return view('admin.category.list', compact('category'));
+    }
+
 }

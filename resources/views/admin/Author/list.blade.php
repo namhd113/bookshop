@@ -13,6 +13,25 @@
     </style>
     {{--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />--}}
 @endsection
+@section('breadcrumb')
+    <div class="row">
+        <div class="col-sm-4" style="text-align: left; padding-left: 32px">
+            <a href="{{route('author.create')}}">
+                <button type="button" class="btn btn-success btn-sm">Add new Authors</button>
+            </a>
+        </div>
+        <div class="nav-search col-sm-4" id="nav-search" style="text-align: right">
+            <form class="form-search" action="{{route('author.search')}}" method="post">
+                @csrf
+                <span class="input-icon">
+									<input name="search" type="text" placeholder="Search ..." class="nav-search-input"
+                                           id="nav-search-input" autocomplete="off"/>
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+            </form>
+        </div>
+    </div>
+@endsection
 
 @section('content')
     <div class="content-wrapper" style="min-height: 1299.69px;">
@@ -77,7 +96,7 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($author as $key=>$author)
+                                                    @foreach($authors as $key=>$author)
                                                         <tr>
                                                             <td class="center">{{$key +1}}</td>
                                                             <td class="center"><img src="{{asset('storage/'.$author->avatar)}}" height="50px" id="authorAvatar"></td>

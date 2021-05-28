@@ -4,6 +4,7 @@ namespace App\Http\Repositories;
 
 
 use App\Models\Book;
+use Illuminate\Support\Facades\DB;
 
 class BookReprository
 {
@@ -25,5 +26,8 @@ class BookReprository
     public function delete($book)
     {
         $book->delete();
+    }
+    public function getByName($name){
+        return DB::table('books')->where('name','like','%'.$name.'%')->get();
     }
 }

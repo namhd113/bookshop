@@ -2,6 +2,7 @@
 namespace App\Http\Repositories;
 
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 
 class CategoryRepository
 {
@@ -18,6 +19,9 @@ class CategoryRepository
     public function store($category)
     {
         $category->save();
+    }
+    public function getByName($name){
+        return DB::table('categories')->where('name','like','%'.$name.'%')->get();
     }
 
 

@@ -19,8 +19,8 @@ class AuthorController extends Controller
 
     public function index()
     {
-        $author = $this->authorService->getAll();
-        return view('admin.author.list',compact('author'));
+        $authors = $this->authorService->getAll();
+        return view('admin.author.list',compact('authors'));
     }
     public function create()
     {
@@ -28,8 +28,8 @@ class AuthorController extends Controller
     }
     public function edit($id)
     {
-        $author = $this->authorService->getById($id);
-        return view('admin.author.edit',compact('author'));
+        $authors = $this->authorService->getById($id);
+        return view('admin.author.edit',compact('authors'));
     }
 
     public function store(CreateAuthorRequest $request)
@@ -52,5 +52,11 @@ class AuthorController extends Controller
         $this->authorService->delete($id);
         return redirect()->route('author.list');
 
+    }
+    public function search(Request $request)
+    {
+        $name = $request->search;
+        $authors = $this->authorService->search($name);
+        return view('admin.author.list', compact('authors'));
     }
 }

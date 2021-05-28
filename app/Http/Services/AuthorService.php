@@ -41,4 +41,7 @@ class AuthorService extends BaseService
         $author = $this->authorRepo->getById($id);
         $this->authorRepo->delete($author);
     }
+    public function search($name){
+        return $this->authorRepo->getByName($name);
+    }
 }

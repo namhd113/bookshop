@@ -46,5 +46,9 @@ class BookService extends BaseService
         $book = $this->bookRepo->getById($id);
         $this->bookRepo->delete($book);
     }
+    public function search($name)
+    {
+        return $this->bookRepo->getByName($name);
+    }
 }
 

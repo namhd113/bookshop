@@ -40,4 +40,7 @@ class CategoryService extends BaseService
     {
         $this->CategoryRepo->delete($category);
     }
+    public function search($name){
+        return $this->CategoryRepo->getByName($name);
+    }
 }
