@@ -97,7 +97,7 @@ Route::prefix('/admin')->group(function () {
             Route::get('/{id}/edit', [\App\Http\Controllers\BookController::class, 'edit'])->name('book.edit');
             Route::post('/{id}/update', [\App\Http\Controllers\BookController::class, 'update'])->name('book.update');
             Route::get('/{id}/destroy', [\App\Http\Controllers\BookController::class, 'delete'])->name('book.destroy');
-
+            Route::post('/', [\App\Http\Controllers\BookController::class, 'search'])->name('book.search');
         });
 //    });
 });

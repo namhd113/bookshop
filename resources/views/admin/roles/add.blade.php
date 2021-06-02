@@ -27,7 +27,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="col-md-12">
-                                    <form action="{{route('roles.store')}}" method="post" enctype="multipart/form-data">
+                                    <form action="{{route('roles.store')}}" method="post">
                                         @csrf
 
                                         <div class="col-md-12">
@@ -52,45 +52,45 @@
                                                     </label>
                                                 </div>
                                                 @foreach($permissions as $permissionsParent)
-                                                <div class="card border-primary mb-3 col-md-12 card-permission">
-                                                    <div class="card-header text-center">
-                                                        <label >
-                                                            <input type="checkbox" value="" class="checkbok_parent">
-                                                            {{$permissionsParent->des}}
-                                                        </label>
-                                                    </div>
-                                                    <div class="row">
-                                                        @foreach($permissionsParent->permissionsChildrent as $permissionsChildrent)
-                                                        <div class="card-body text-primary col-md-3">
-                                                                <label>
-                                                                    <input
-                                                                        class="checkbox_childrent"
-                                                                        name="permission_id[{{$permissionsChildrent->id}}]"
-                                                                        value="{{ $permissionsChildrent->id }}" type="checkbox" >
-                                                                    {{$permissionsChildrent->des}}
-                                                                </label>
+                                                    <div class="card border-primary mb-3 col-md-12 card-permission">
+                                                        <div class="card-header text-center">
+                                                            <label >
+                                                                <input type="checkbox" value="" class="checkbok_parent">
+                                                                {{$permissionsParent->des}}
+                                                            </label>
                                                         </div>
-                                                        @endforeach
+                                                        <div class="row">
+                                                            @foreach($permissionsParent->permissionsChildrent as $permissionsChildrent)
+                                                                <div class="card-body text-primary col-md-3">
+                                                                    <label>
+                                                                        <input
+                                                                                class="checkbox_childrent"
+                                                                                name="permission_id[{{$permissionsChildrent->id}}]"
+                                                                                value="{{ $permissionsChildrent->id }}" type="checkbox" >
+                                                                        {{$permissionsChildrent->des}}
+                                                                    </label>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 @endforeach
                                             </div>
                                         </div>
 
-{{--                                        <div class="form-group row">--}}
-{{--                                            <div class="col-sm-3">Permissions</div>--}}
-{{--                                            <div class="col-sm-9 row">--}}
-{{--                                                @foreach($permissions as $permission)--}}
-{{--                                                    <div class="form-check mr-3">--}}
-{{--                                                        <input value="{{ $permission->id }}" name="permission_id[{{$permission->id}}]" class="form-check-input"--}}
-{{--                                                               type="checkbox" id="gridCheck-{{$permission->id}}">--}}
-{{--                                                        <label class="form-check-label" for="gridCheck-{{$permission->id}}">--}}
-{{--                                                            {{ $permission->name }}--}}
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-{{--                                                @endforeach--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-sm-3">Permissions</div>
+                                                                                        <div class="col-sm-9 row">
+                                                                                            @foreach($permissions as $permission)
+                                                                                                <div class="form-check mr-3">
+                                                                                                    <input value="{{ $permission->id }}" name="permission_id[{{$permission->id}}]" class="form-check-input"
+                                                                                                           type="checkbox" id="gridCheck-{{$permission->id}}">
+                                                                                                    <label class="form-check-label" for="gridCheck-{{$permission->id}}">
+                                                                                                        {{ $permission->name }}
+                                                                                                    </label>
+                                                                                                </div>
+                                                                                            @endforeach
+                                                                                        </div>
+                                                                                    </div>
                                         <button type="submit" class="btn btn-primary" style="padding: 7px 30px">submit</button>
                                     </form>
                                 </div>

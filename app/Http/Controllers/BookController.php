@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookRequest;
 use App\Http\Services\AuthorService;
 use App\Http\Services\BookService;
 use App\Http\Services\CategoryService;
@@ -33,9 +34,10 @@ class BookController extends Controller
 
     public function create()
     {
+       // dd('da vao day tao view');
         $authors = $this->authorService->getAll();
         $categories = $this->categoryService->getAll();
-        return view('admin.book.add',compact('authors','categories'));
+        return view('admin.book.add', compact('authors', 'categories'));
     }
 
     public function edit($id)
@@ -50,7 +52,7 @@ class BookController extends Controller
     {
 
         $this->bookService->store($request);
-        return redirect()->route('books.list');
+        return redirect()->route('book.list');
     }
 
     public function update($id, Request $request)
@@ -63,7 +65,7 @@ class BookController extends Controller
     public function delete($id)
     {
         $this->bookService->delete($id);
-        return redirect()->route('books.list');
+        return redirect()->route('book.list');
     }
 
 

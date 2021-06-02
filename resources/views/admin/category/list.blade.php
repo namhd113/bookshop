@@ -21,14 +21,14 @@
             </a>
         </div>
         <div class="nav-search col-sm-4" id="nav-search" style="text-align: right">
-            <form class="form-search" action="{{route('category.search')}}" method="post">
-                @csrf
+{{--            <form>--}}
+{{--                @csrf--}}
                 <span class="input-icon">
 									<input name="search" type="text" placeholder="Search ..." class="nav-search-input"
-                                           id="nav-search-input" autocomplete="off"/>
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
+                                           id="search" autocomplete="off"/>
+									<i onclick="search()" class="ace-icon fa fa-search nav-search-icon"></i>
 								</span>
-            </form>
+{{--            </form>--}}
         </div>
     </div>
 @endsection
@@ -56,7 +56,7 @@
                                                 Sách
                                             </div>
                                             <div>
-                                                <table class="table" ui-jq="footable" ui-options='{
+                                                <table class="table" id="tableData" ui-jq="footable" ui-options='{
         "paging": {
           "enabled": true
         },
@@ -128,6 +128,71 @@
                 URL.revokeObjectURL(imageOutput.src) // free memory
             }
         };
+
+        function search(event)
+        {
+
+            const valueSearch = $('search').val();
+            console.log(valueSearch);
+            $.ajax({
+                url: "{{route('category.search')}}",
+                type: "POST",
+
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    "name": $('#search').val(),
+
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data.data);
+                    // $("#tableData tbody tr").remove();
+                    $("#tableData tbody").html(data);
+                    RenderList(data.data);
+                },
+                error: function (data) {
+                    var errors = JSON.parse(data.responseText);
+                    $.each(errors, function (key, val) {
+                        $('#_error').text(val.name);
+                        $('#authorName').addClass('border-danger');
+                        // console.log(val.name);
+                    });
+                }
+            });
+        }
+
+        function RenderList(listData)
+        {
+            $.each(listData, function (i) {
+                $("#tableData tbody").append("<tr>" +
+                    "<td>" + listData[i].id + "</td>" +
+                    "<td>" + listData[i].name + "</td>" +
+                    "<td>" + listData[i].desc + "</td>" +
+                    "<td>" + "</td>" +
+
+                    "</tr>");
+            })
+        }
     </script>
+{{--    <script type="text/javascript">--}}
+{{--        $('#search').on('keyup',function (){--}}
+{{--            $value = $(this).val();--}}
+{{--            $.ajax({--}}
+{{--                type : 'get',--}}
+{{--                url : '{{route('category.search')}}',--}}
+{{--                data : {--}}
+{{--                    'search' : $value--}}
+{{--                },--}}
+{{--                success : function ($data){--}}
+{{--                    $('tbody').html($data)--}}
+{{--                },--}}
+{{--            });--}}
+{{--        });--}}
+{{--        $.ajaxSetup({--}}
+{{--            headers: {--}}
+{{--                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+{{--            }--}}
+{{--        });--}}
+{{--    </script>--}}
 @endsection
 

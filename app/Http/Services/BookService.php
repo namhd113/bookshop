@@ -25,8 +25,12 @@ class BookService extends BaseService
 
     public function store($request)
     {
+
+
         $book = new Book();
         $book->fill($request->all());
+        $path = $this->updateLoadFile($request, 'avatar', 'book-images');
+        $book->avatar = $path;
         $this->bookRepo->store($book);
     }
 

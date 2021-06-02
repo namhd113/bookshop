@@ -6,6 +6,7 @@ use App\Http\Requests\CategoryRequest;
 use App\Http\Services\CategoryService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Response;
 
 class CategoryController extends Controller
 {
@@ -53,9 +54,11 @@ class CategoryController extends Controller
     }
     public function search(Request $request)
     {
-        $name = $request->search;
+        //dd('ss');
+        $name = $request->name;
         $category = $this->categoryService->search($name);
-        return view('admin.category.list', compact('category'));
+
+        return response()->json(['data'=>$category]);
     }
 
 }

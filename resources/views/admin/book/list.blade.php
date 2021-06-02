@@ -115,9 +115,9 @@
                                                             <td class="center" style="padding-top: 20px">
                                                                 <div class="hidden-sm hidden-xs btn-group">
 
-                                                                    <a class="btn btn-xs btn-info" href="{{route('books.edit',$author->id)}}"><i
+                                                                    <a class="btn btn-xs btn-info" href="{{route('book.edit',$author->id)}}"><i
                                                                                 class="ace-icon fa fa-pencil bigger-120"></i></a>
-                                                                    <a class="btn btn-xs btn-danger delete-btn" href="{{route('books.delete',$author->id)}}"><i
+                                                                    <a class="btn btn-xs btn-danger delete-btn" href="{{route('book.destroy',$author->id)}}"><i
                                                                                 class="ace-icon fa fa-trash bigger-120"></i></a>
 
                                                                 </div>

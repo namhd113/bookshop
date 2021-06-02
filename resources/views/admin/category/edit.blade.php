@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h1>Thêm sách</h1>
+                    <h1>Thêm danh mục</h1>
                 </div>
                 <div class="form-group">
                     <form method="POST" action="{{route('category.update',$category->id)}}" enctype="multipart/form-data">
@@ -33,7 +33,7 @@
                         @endif
                         <div class="form-group">
                             <label>Mô tả</label>
-                            <input type="text" name="desc" class="form-control" placeholder="price">
+                            <input type="text" name="desc" class="form-control" placeholder="desc">
                         </div>
 
 

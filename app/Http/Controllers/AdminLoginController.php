@@ -12,7 +12,7 @@ class AdminLoginController extends Controller
         if (!Auth::user()){
             return view('admin.login.login');
         }else{
-            return redirect()->route('admin.book.index');
+            return redirect()->route('book.list');
         }
     }
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Http\Services\PermissionService;
 use App\Http\Services\RoleService;
 use Illuminate\Http\Request;
 
@@ -10,9 +10,10 @@ class RoleController extends Controller
 {
     protected $roleService;
     protected $permissionService;
-    public function __construct(RoleService $roleService)
+    public function __construct(RoleService $roleService, PermissionService $permissionService)
     {
         $this->roleService = $roleService;
+        $this->permissionService = $permissionService;
 
     }
 
@@ -24,8 +25,8 @@ class RoleController extends Controller
 
     function create()
     {
-
-        return view('admin.roles.add');
+        $permissions = $this->permissionService->getAll();
+        return view('admin.roles.add', compact('permissions'));
     }
 
     function store(Request $request): \Illuminate\Http\RedirectResponse

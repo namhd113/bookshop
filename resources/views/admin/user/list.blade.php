@@ -70,11 +70,18 @@
                                                         <td class="dtr-control sorting_1" tabindex="0">{{ ++$key}}</td>
                                                         <td>{{$user->name}}</td>
                                                         <td>{{$user->email}}</td>
+
+
                                                         <td>
                                                             @foreach($user->roles as $role)
                                                                 {{$role->name . ', '}}
                                                             @endforeach
                                                         </td>
+                                                        <td><a href="{{route('users.edit', ['id' => $user->id])}}"
+                                                               class="btn btn-default">EDIT</a></td>
+                                                        <td><a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger"
+                                                               onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>
+
                                                         @canany(['edit_user', 'delete_user'])
                                                             <td>
 

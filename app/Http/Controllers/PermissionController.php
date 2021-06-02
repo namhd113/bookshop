@@ -24,7 +24,8 @@ class PermissionController extends Controller
 
     function create()
     {
-        return view('admin.permissions.add');
+        $permissions = $this->permissionService->getAll();
+        return view('admin.permissions.add', compact('permissions'));
     }
 
     function store(Request $request)

@@ -6,6 +6,15 @@
 @section('css')
 
 @endsection
+@section('breadcrumb')
+    <div class="row">
+        <div class="col-sm-4" style="text-align: left; padding-left: 32px">
+            <a href="{{route('roles.create')}}">
+                <button type="button" class="btn btn-success btn-sm">Add new roles</button>
+            </a>
+        </div>
+
+@endsection
 @section('content')
     <div class="content-wrapper" style="min-height: 1299.69px;">
         <!-- Content Header (Page header) -->
