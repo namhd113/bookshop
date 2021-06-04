@@ -15,9 +15,9 @@
 @endsection
 @section('breadcrumb')
     <div class="row">
-        <div class="col-sm-4" style="text-align: left; padding-left: 262px">
-            <a href="#modal-form" role="button" class="blue" data-toggle="modal">
-                <button type="button" class="btn btn-success btn-sm">Add new category</button>
+        <div class="col-sm-4" style="text-align: left; padding-left: 32px">
+            <a href="{{route('category.create')}}">
+                <button type="button" class="btn btn-success btn-sm">Add new Authors</button>
             </a>
         </div>
         <div class="nav-search col-sm-4" id="nav-search" style="text-align: right">

@@ -24,7 +24,7 @@
                         @csrf
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" class="form-control" value="{{$category->name}}">
                         </div>
                         @if($errors->has('name'))
                             <div class="alert alert-danger">
@@ -33,7 +33,7 @@
                         @endif
                         <div class="form-group">
                             <label>Mô tả</label>
-                            <input type="text" name="desc" class="form-control" placeholder="desc">
+                            <input type="text" name="desc" class="form-control" placeholder="desc" value="{!! $category->desc !!}">
                         </div>
 
 
