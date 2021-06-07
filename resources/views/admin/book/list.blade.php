@@ -104,59 +104,27 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @foreach($books as $key=>$author)
+                                                    @foreach($books as $key=>$book)
                                                         <tr>
                                                             <td class="center">{{$key +1}}</td>
-                                                            <td class="center"><img src="{{asset('storage/'.$author->avatar)}}" height="50px"></td>
-                                                            <td class="center" style="padding-top: 20px"><a href="{{$author->wiki_link}}" id="authorName">{{$author->name}}</a></td>
-                                                            <td class="center" style="padding-top: 20px">{{$author->born}}</td>
-                                                            <td class="center" style="padding-top: 20px">{{$author->book_qty}}</td>
-                                                            <td class="center" style="padding-top: 20px">{{$author->country}}</td>
-                                                            <td class="center" style="padding-top: 20px">
-                                                                <div class="hidden-sm hidden-xs btn-group">
+                                                            <td class="center"><img src="{{asset('storage/'.$book->avatar)}}" height="50px" id="authorAvatar"></td>
+                                                            <td class="center" style="padding-top: 20px">{{$book->name}}</td>
 
-                                                                    <a class="btn btn-xs btn-info" href="{{route('book.edit',$author->id)}}"><i
-                                                                                class="ace-icon fa fa-pencil bigger-120"></i></a>
-                                                                    <a class="btn btn-xs btn-danger delete-btn" href="{{route('book.destroy',$author->id)}}"><i
-                                                                                class="ace-icon fa fa-trash bigger-120"></i></a>
+                                                            <td>{{  $book->category->name ?? '' }}</td>
+                                                            <td>{{  $book->author->name ?? '' }}</td>
+                                                            <td class="center" style="padding-top: 20px">{{$book->publish_date}}</td>
+                                                            <td class="center" style="padding-top: 20px">{{$book->republish_no}}</td>
+                                                            <td class="center" style="padding-top: 20px">{{$book->license_no}}</td>
 
-                                                                </div>
 
-                                                                <div class="hidden-md hidden-lg">
-                                                                    <div class="inline pos-rel">
-                                                                        <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown"
-                                                                                data-position="auto">
-                                                                            <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-                                                                        </button>
 
-                                                                        <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                                                            <li>
-                                                                                <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-																			<span class="blue">
-																				<i class="ace-icon fa fa-search-plus bigger-120"></i>
-																			</span>
-                                                                                </a>
-                                                                            </li>
+                                                            <form action="">
+                                                            <td><a href="{{route('book.edit', ['id' => $book->id])}}"
+                                                                   class="btn btn-default">EDIT</a></td>
+                                                            <td><a href="{{ route('book.destroy', $book->id) }}" class="btn btn-danger"
+                                                                   onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a></td>
 
-                                                                            <li>
-                                                                                <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-																			<span class="green">
-																				<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-																			</span>
-                                                                                </a>
-                                                                            </li>
-
-                                                                            <li>
-                                                                                <a href="#" class="tooltip-error"  data-rel="tooltip" title="Delete">
-																			<span class="red">
-																				<i class="ace-icon fa fa-trash-o bigger-120"></i>
-																			</span>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </td>
+                                                        </form>
                                                         </tr>
                                                     @endforeach
                                                     </tbody>

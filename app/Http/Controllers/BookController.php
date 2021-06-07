@@ -59,7 +59,7 @@ class BookController extends Controller
     {
         $book = $this->bookService->getById($id);
         $this->bookService->update($request);
-        return redirect()->route('books.list');
+        return redirect()->route('book.list');
     }
 
     public function delete($id)

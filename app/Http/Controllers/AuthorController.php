@@ -39,7 +39,7 @@ class AuthorController extends Controller
 
     }
 
-    function update($id, CreateAuthorRequest $request)
+    function update($id, Request $request)
     {
         $author = $this->authorService->getById($id);
         $this->authorService->update($author, $request);

@@ -24,7 +24,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="post" action="{{route('author.update',$author->id)}}" enctype="multipart/form-data">
+                        <form method="post" action="{{route('author.update',$authors->id)}}" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
@@ -32,30 +32,30 @@
                                         <div>
                                             <label style="width: 100px; text-align: left">Name</label>
                                             <span class="input-icon">
-												<input type="text" id="form-field-icon-1" name="name" value="{{$author['name']}}"/>
+												<input type="text" id="form-field-icon-1" name="name" value="{{$authors->name}}"/>
 												<i class="ace-icon glyphicon glyphicon-user"></i>
 											</span>
                                             <div class="space-12"></div>
 
                                             <label style="width: 100px;text-align: left">Country</label>
                                             <span class="input-icon">
-												<input type="text" id="form-field-icon-1" name="country" value="{{$author['country']}}"/>
+												<input type="text" id="form-field-icon-1" name="country" value="{{$authors->country}}"/>
 												<i class="ace-icon glyphicon glyphicon-flag"></i>
 											</span>
                                             <div class="space-12"></div>
 
                                             <label style="width: 100px;text-align: left">Wikipedia</label>
                                             <span class="input-icon">
-												<input type="text" id="form-field-icon-1" name="wiki_link" value="{{$author['wiki_link']}}"/>
+												<input type="text" id="form-field-icon-1" name="wiki_link" value="{{$authors->wiki_link}}"/>
 												<i class="ace-icon glyphicon glyphicon-link"></i>
 											</span>
                                             <div class="space-12"></div>
 
-                                            <label style="width: 100px;text-align: left" >Born</label>
+                                            <label style="width: 100px;text-align: left">Born</label>
                                             <span class="input-icon">
                                                         <input name="born" class="form-control date-picker"
                                                                id="id-date-picker-1"
-                                                               type="date" data-date-format="yyyy-mm-dd"/>
+                                                               type="date" data-date-format="yyyy-mm-dd" />
                                                 <i class="ace-icon glyphicon glyphicon-heart"></i>
                                             </span>
                                             <div class="space-12"></div>
@@ -75,7 +75,7 @@
                                             <label for="exampleInputFile">File input</label>
                                             <div class="input-group">
                                                 <div class="custom-file">
-                                                    <input type="file" name="avatar" class="form-control-file">
+                                                    <input type="file" name="avatar" class="form-control-file" value="{{$authors['avatar']}}">
                                                 </div>
                                             </div>
                                         </div>

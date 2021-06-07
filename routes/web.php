@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [\App\Http\Controllers\fontEnd\HomeController::class, 'index'])->name('home.index');
+
+//dang ki
+Route::get('/login', [\App\Http\Controllers\fontEnd\HomeController::class, 'loginCustomer'])->name('home.login');
+Route::get('/register', [\App\Http\Controllers\fontEnd\HomeController::class, 'showFormRegister'])->name('home.show-form-register');
+Route::post('/login', [\App\Http\Controllers\fontEnd\HomeController::class, 'checkLogin'])->name('home.check-login');
+Route::get('/logout', [\App\Http\Controllers\fontEnd\HomeController::class, 'logout'])->name('home.logout');
+Route::post('/register', [\App\Http\Controllers\fontEnd\HomeController::class, 'register'])->name('home.register');
+
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', [AdminLoginController::class, 'showLogin'])->name('admin.login');
@@ -99,5 +110,16 @@ Route::prefix('/admin')->group(function () {
             Route::get('/{id}/destroy', [\App\Http\Controllers\BookController::class, 'delete'])->name('book.destroy');
             Route::post('/', [\App\Http\Controllers\BookController::class, 'search'])->name('book.search');
         });
+    Route::prefix('/customers')->group(function (){
+        Route::get('/',[CustomerController::class,'index'])->name('customers.index');
+
+        Route::get('/{id}/edit',[CustomerController::class,'edit'])->name('customers.edit')
+            ;
+
+        Route::post('/{id}/edit',[CustomerController::class,'update'])->name('customers.update');
+
+        Route::get('/{id}/delete',[CustomerController::class,'delete'])->name('customers.delete')
+            ;
+    });
 //    });
 });

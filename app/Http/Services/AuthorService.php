@@ -32,11 +32,14 @@ class AuthorService extends BaseService
 
     function update($author, $request)
     {
-        $author->fill($request->all());
-        $path = $this->updateLoadFile($request, 'avatar', 'author-images');
-        $author->avatar = $path;
+       $author->fill($request->all());
+        if ($request->hasFile('avatar')){
+            $filePath = $request->file('avatar')->store('authors','public');
+            $author->avatar = $filePath;
+        }
         $this->authorRepo->store($author);
     }
+
     public function delete($id){
         $author = $this->authorRepo->getById($id);
         $this->authorRepo->delete($author);
