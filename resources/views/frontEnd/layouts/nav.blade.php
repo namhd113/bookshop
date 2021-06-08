@@ -12,7 +12,7 @@
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="{{route('home.index')}}">Homepage</a></li>
+                            <li class="active"><a href="{{route('home.view-all')}}">Homepage</a></li>
 {{--                            <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>--}}
 {{--                                <ul class="dropdown">--}}
 {{--                                    @foreach($categories as $category)--}}
@@ -39,16 +39,16 @@
                                 <div class="row">
                                     <div style="display: inline-flex; align-items: center">
                                         <div>
-{{--                                            <a href="{{route('cart.show')}}" style="font-size: 18px" class="show-cart-detail">--}}
+                                            <a href="{{route('cart.show')}}" style="font-size: 18px" class="show-cart-detail">
                                                 <i class="fa fa-shopping-cart"></i>
                                             </a>
                                         </div>
-                                        {{--                                        @if(\Illuminate\Support\Facades\Session::has('cart'))--}}
+                                                                                @if(\Illuminate\Support\Facades\Session::has('cart'))
 
                                         <div>
                                             <p id="total_quantity" style="color: red">({{\Illuminate\Support\Facades\Session::get('cart')->totalQuantity ?? 0}})</p>
                                         </div>
-                                        {{--                                        @endif--}}
+                                                                                @endif
                                     </div>
                                 </div>
                             </li>

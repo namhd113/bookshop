@@ -28,6 +28,16 @@ class HomeRepository
     {
         return Book::findOrFail($id);
     }
+    function searchBooks($search): \Illuminate\Support\Collection
+    {
+        return DB::table('Book')
+            ->where('name', 'LIKE', "%$search%")
+            ->orWhere('author_name', 'LIKE', "%$search%")
+            ->orWhere('category_name', 'LIKE', "%$search%")
+            ->select('id','name', 'image', 'price')
+            ->groupBy('id')
+            ->get();
+    }
 
 
 }

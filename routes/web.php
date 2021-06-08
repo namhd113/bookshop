@@ -20,6 +20,10 @@ Route::get('/', function () {
 });
 
 Route::get('/', [\App\Http\Controllers\fontEnd\HomeController::class, 'index'])->name('home.index');
+Route::post('/', [\App\Http\Controllers\fontEnd\HomeController::class, 'searchBook'])->name('home.search-books');
+Route::get('/view-all', [\App\Http\Controllers\fontEnd\HomeController::class, 'viewAll'])->name('home.view-all');
+Route::get('/{id}/book-detail', [\App\Http\Controllers\fontEnd\HomeController::class, 'bookDetail'])->name('home.book-detail');
+
 
 //dang ki
 Route::get('/login', [\App\Http\Controllers\fontEnd\HomeController::class, 'loginCustomer'])->name('home.login');
@@ -28,6 +32,15 @@ Route::post('/login', [\App\Http\Controllers\fontEnd\HomeController::class, 'che
 Route::get('/logout', [\App\Http\Controllers\fontEnd\HomeController::class, 'logout'])->name('home.logout');
 Route::post('/register', [\App\Http\Controllers\fontEnd\HomeController::class, 'register'])->name('home.register');
 
+
+//cart
+Route::prefix('/cart')->group(function (){
+    Route::get('/{id}/add',[\App\Http\Controllers\fontEnd\CartController::class, 'addToCart'])->name('cart.add');
+    Route::get('/show-cart',[\App\Http\Controllers\fontEnd\CartController::class, 'showCart'])->name('cart.show');
+    Route::get('/update-cart',[\App\Http\Controllers\fontEnd\CartController::class, 'updateCart'])->name('cart.update');
+    Route::get('/{id}/remove-cart',[\App\Http\Controllers\fontEnd\CartController::class, 'removeProduct'])->name('cart.remove');
+    Route::get('/delete-cart',[\App\Http\Controllers\fontEnd\CartController::class, 'deleteCart'])->name('cart.delete');
+});
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', [AdminLoginController::class, 'showLogin'])->name('admin.login');

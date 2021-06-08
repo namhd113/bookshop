@@ -40,7 +40,7 @@ class HomeController extends Controller
     {
         if (Auth::guard('customer')->attempt(['email' => $request->email, 'password' => $request->password])) {
             // Authentication was successful...
-            return redirect()->route('home.index')->with('message', 'Login successfully');
+            return redirect()->route('home.view-all')->with('message', 'Login successfully');
         } else {
 
             Session::flash('error', 'Email or password not correct');
@@ -67,5 +67,16 @@ class HomeController extends Controller
     {
         $this->customerService->store($request);
         return redirect()->route('home.index')->with('message', 'Register successfully');
+    }
+    function bookDetail($id)
+    {
+        $book = $this->homeService->findById($id);
+        return view('frontEnd.books.book-detail', compact('book'));
+    }
+
+    function viewAll()
+    {
+        $books = $this->homeService->getAll();
+        return view('frontEnd.books.view-all', compact('books'));
     }
 }
