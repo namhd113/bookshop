@@ -84,9 +84,12 @@
                                                 <div class="form-group col-6">
                                                     <label class="form-check-label text-primary">Page number</label>
                                                     <input name="pages" type="number" class="form-control">
-{{--                                                    @error('pages')--}}
-{{--                                                    <p class="text-danger">{{ $message }}</p>--}}
-{{--                                                    @enderror--}}
+{{--                                                    
+                                                </div>
+                                                   <div class="form-group col-6">
+                                                    <label class="form-check-label text-primary">Gia</label>
+                                                    <input name="price" type="number" class="form-control">
+{{--                                                    
                                                 </div>
 
                                                 <div class="form-group col-6">

@@ -90,10 +90,10 @@
                             @foreach($books as $book)
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg"  data-setbg="{{asset('/storage/'. $book->avatar)}}">
+                                        <div class="product__item__pic set-bg" data-setbg="{{asset('/storage/'. $book->avatar)}}">
                                             {{--                            <div class="ep">18 / 18</div>--}}
                                             <div class="view"
-                                                 style="height: 35px; font-size: 18px">{{number_format($book->qty)}}</div>
+                                                 style="height: 35px; font-size: 18px">{{number_format($book->price)}}</div>
                                         </div>
                                         <div class="product__item__text" style="text-align: center">
                                             <h5 class="mb-3"><a href="{{route('home.book-detail', $book->id)}}">{{$book->name}}</a></h5>

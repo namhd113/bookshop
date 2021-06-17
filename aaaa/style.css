@@ -1,0 +1,154 @@
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+}
+body {
+	font-family: sans-serif;
+	font-weight: 300;
+	color: #333;
+	line-height: 1.254;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none; /* bo gach chan */
+	color: #3b8bba;
+	transition: all 0.5s;
+}
+a:hover, a:visited {
+	color: #2657;
+}
+
+/* chia cot */
+#container {
+	padding-left: 150px;
+	position: relative;
+	left: 0;
+	width: 100%;
+}
+ #menu {
+ 	position: fixed;
+ 	height: 100%;
+ 	background: black;
+ 	width: 150px;
+ 	left: 0;
+ }
+
+ /* menu */
+ #menu{}
+ #menu ul {
+ 	list-style-type: none;
+ 	padding: 0;
+ 	margin: 0;
+ }
+
+ #menu ul li {
+ 	line-height: 2.9em;
+ 	height: 2.9em;
+ 	transition: all 1s;
+ 	-mor-transition: all 1s;
+ 	-wedkit-transition: all 1s;
+ 	position: relative;
+ }
+ #menu ul li a {
+ 	display: block;
+ 	color: #fff;
+ 	padding: 0 1em;
+ 	border-bottom: 1px solid #333;
+ }
+#menu ul li:hover {
+	background-color: #454545;
+}
+
+#menu .sub-menu {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 150px;
+	background-color: #191818;
+}
+
+#menu ul li:hover .sub-menu{
+	background-color: #454545;
+	display: block;
+}
+/* content */
+
+#content {
+	padding: 0.1em 10em;
+}
+#header, .call-to-action {
+  text-align: center;
+}
+#header {
+
+}
+
+#header #slogan {
+	color: #333;
+	font-size: 0.8em;
+}
+
+.call-to-action {
+	padding: 1.5em 20%;
+	background-color: #efefef;
+	border: 1px solid #e8e8e8;
+}
+
+.row {
+	overflow: hidden;
+	margin: 1.5em auto;
+}
+.row .col {
+	float: left;
+	width: 29.3333%;
+	margin-right: 2em;
+}
+.row .col img {
+	width: 100px;
+	float: left;
+}
+
+#footer {
+	font-size: 80%;
+	border-top: 1px solid #e6e6e6;
+	color: #838383;
+	padding: 1em 20em;
+}
+.xt-ct-menu {
+        position: relative;
+        display: inline-block;
+    }
+
+    .xtlab-ctmenu-item {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .xtlab-ctmenu-item:hover, .xtlab-ctmenu-item:focus {
+        background-color: #9c3328;
+    }
+
+    .xtlab-ctmenu-sub {
+        display: none;
+        position: absolute;
+        background-color: #3e8e41;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .xtlab-ctmenu-sub a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .xtlab-ctmenu-sub a:hover {
+        background-color: orange;
+        border: none;
+
+    }

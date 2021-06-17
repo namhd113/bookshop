@@ -90,7 +90,7 @@
                             </div>
                             <div class="anime__details__btn">
                                 <div class="comment" style="width: 300px; height: 50px; border-radius: 5px; align-items: center">
-{{--                                    <a  href="#" data-url="{{route('cart.add', $book->id)}}" class="btn btn-danger text-white add-to-cart"><i class="fa fa-shopping-cart"></i> Add to--}}
+                                    <a  href="#" data-url="{{route('cart.add', $book->id)}}" class="btn btn-danger text-white add-to-cart"><i class="fa fa-shopping-cart"></i> Add to
                                         cart</a>
                                 </div>
 {{--                                <a href="#" class="watch-btn"><span>Watch Now</span> <i--}}

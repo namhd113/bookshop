@@ -43,12 +43,12 @@
                                                 <i class="fa fa-shopping-cart"></i>
                                             </a>
                                         </div>
-                                                                                @if(\Illuminate\Support\Facades\Session::has('cart'))
+{{--                                        @if(\Illuminate\Support\Facades\Session::has('cart'))--}}
 
                                         <div>
                                             <p id="total_quantity" style="color: red">({{\Illuminate\Support\Facades\Session::get('cart')->totalQuantity ?? 0}})</p>
                                         </div>
-                                                                                @endif
+{{--                                        @endif--}}
                                     </div>
                                 </div>
                             </li>
